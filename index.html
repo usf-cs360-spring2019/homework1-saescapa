@@ -11,26 +11,31 @@
   <!-- bulma 0.7.2 and font awesome v5.7.1 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <style> /* set the CSS */
+  <style>
 
-.line {
-  fill: none;
-  stroke: steelblue;
-  stroke-width: 2px;
-}
+    .line {
+      fill: none;
+      stroke: steelblue;
+      stroke-width: 2px;
+    }
 
-.arc text {
-  font: 10px sans-serif;
-  text-anchor: middle;
-}
+    .arc text {
+      font: 10px sans-serif;
+      text-anchor: middle;
+    }
 
-.legend {
-  font-size: 0.7em;
-}
+    .legend {
+      font-size: 0.7em;
+    }
 
-.arc path {
-  stroke: #fff;
-}
+    .arc path {
+      stroke: #fff;
+    }
+
+    .caption {
+      font-size: 12px;
+      color: dark-grey;
+    }
 
 </style>
   <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -132,8 +137,13 @@
   <section class="section">
     <div class="container content">
       <h2>Visualization 1</h2>
-      <div id="vis1">
 
+      <div id="vis1"></div>
+
+      <div class="caption">
+        Number of incidents by hour of the day. The data consists of incidents for the period of December 2018, with 12,281 results.
+        The number of incidents increases particularily during the early morning, at 11AM. The total number of incidents is relatively consistent throughout the mid-day until 7PM, to which point there is a large decrease of incidents.
+        Samuel Escapa - CS 360
       </div>
 
       <h3>Interpretation</h3>
@@ -160,6 +170,10 @@
       <h2>Visualization 2</h2>
 
       <div id="vis2"></div>
+      <div class="caption">
+        Count of Incidents for location intersections with over 30 incidents. The data consists of incidents for the period of December 2018, with 1,361 results. This represents locations with 1 or more incidents on average per day every month. Powell St / OFarrell Street in particular accounts for 13% of the incidents in this subset.
+        Samuel Escapa - CS 360
+      </div>
 
       <h3>Interpretation</h3>
       <p>
@@ -185,8 +199,10 @@
     <div class="container content">
       <h2>Visualization 3</h2>
 
-      <div id="vis3">
-
+      <div id="vis3"></div>
+      <div class="caption">
+        Different types of incidents and count of them for the intersection of Powell ST / O'Farrell St. The data consists of incidents for the period of December 2018, with 180 results. As clearly seen, Larceny Theft accounts for 50% of the incidents in the most incidental intersection in San Francisco.
+        Samuel Escapa - CS 360
       </div>
 
       <h3>Interpretation</h3>

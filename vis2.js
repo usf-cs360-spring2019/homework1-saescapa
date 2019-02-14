@@ -3,7 +3,7 @@ function buildVisualization2() {
   // Basic Set up
   const visualization = d3.select("#vis2").append("svg")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom + 140)
+    .attr("height", height + margin.top + margin.bottom + 200)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
