@@ -11,6 +11,29 @@
   <!-- bulma 0.7.2 and font awesome v5.7.1 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <style> /* set the CSS */
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+.arc text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.legend {
+  font-size: 0.7em;
+}
+
+.arc path {
+  stroke: #fff;
+}
+
+</style>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 
 <!-- body -->
@@ -22,10 +45,10 @@
     <div class="hero-body">
       <div class="container">
         <h1 class="title">
-          Visualization Assignment
+          Homework #1
         </h1>
         <h2 class="subtitle">
-          Full Name
+          Samuel Escapa
         </h2>
       </div>
     </div>
@@ -45,12 +68,31 @@
           </div>
 
           <div id="main-navbar" class="navbar-menu">
+            <a class="navbar-item" href="#prototypes">
+              <span class="icon">
+                <i class="fas fa-eye"></i>
+              </span>
+              <span>Prototypes</span>
+            </a>
             <a class="navbar-item" href="#vis1">
               <span class="icon">
                 <i class="fas fa-chart-area"></i>
               </span>
               <span>Visualization 1</span>
             </a>
+            <a class="navbar-item" href="#vis2">
+              <span class="icon">
+                <i class="fas fa-chart-area"></i>
+              </span>
+              <span>Visualization 2</span>
+            </a>
+            <a class="navbar-item" href="#vis3">
+              <span class="icon">
+                <i class="fas fa-chart-area"></i>
+              </span>
+              <span>Visualization 3</span>
+            </a>
+
           </div>
 
           <div class="navbar-end">
@@ -74,31 +116,93 @@
     </div>
   </section>
 
-  <!-- todo: add sections as necessary -->
+  <a name="prototypes"></a>
   <section class="section">
     <div class="container content">
-      <!-- todo: modify as necessary (or move visualizations to separate pages) -->
-      <h2>Visualization 1</h2>
+      <h2>Prototypes</h2>
 
-      <svg width="100%" height="400" style="background-color: whitesmoke; border: 1px solid black;">
-      </svg>
+      <img class="visualizationImage" src="graphs/prototype1.png" />
+      <img class="visualizationImage" src="graphs/prototype2.png" />
+      <img class="visualizationImage" src="graphs/prototype3.png" />
+    </div>
+  </section>
+
+
+  <a name="vis1"></a>
+  <section class="section">
+    <div class="container content">
+      <h2>Visualization 1</h2>
+      <div id="vis1">
+
+      </div>
 
       <h3>Interpretation</h3>
-
       <p>
-        If appropriate, provide a brief discussion of how to interpret this visualization (e.g. how the data is encoded) and how to interact with this visualization. Some of this discussion may not be necessary depending on the legends provided with the visualization.
+        This graph represents the number of incidents by a particular time of the day for the month of December 2018.
       </p>
 
       <h3>Discussion</h3>
-
       <p>
-        If appropriate, provide a brief discussion of the primary goal and findings of the visualization, any challenges encountered creating the visualization, and any other context as required by the assignment.
+        The pattern of this graph shows a large increase of incidents at around 11am. As thought otherwise, most incidents occur in the middle of the day, and drops starting at 6PM. At 2AM until 6AM, the number of incidents are at its lowest. This pattern could be explained by the simple fact that there are less people in the streets during the day, and therefore less chances of incidents occuring.
       </p>
 
       <h3>Credit</h3>
-
       <p>
-        If appropriate, provide credit for the dataset, any code used, and design inspirations here. Unsufficient discussion here is a violation of the <a href="/syllabus.html#cheating-policy">academic honesty policy</a> and may result in an F grade for the assignment or the <em>entire</em> course.
+        Data set: <a href="https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-2018-to-Present/wg3w-h783" target="_blank">SFPD Incidents 2018-2019</a><br />
+        Simple Line graph: <a href="https://bl.ocks.org/d3noob/402dd382a51a4f6eea487f9a35566de0" target="_blank">d3noob</a>
+      </p>
+    </div>
+  </section>
+
+  <a name="vis2"></a>
+  <section class="section">
+    <div class="container content">
+      <h2>Visualization 2</h2>
+
+      <div id="vis2"></div>
+
+      <h3>Interpretation</h3>
+      <p>
+        This graph displays the number of incidents for each intersection with 30 or more incidents, meaning, averaging one incident or more per day for the month of December 2018. The gradient represents the count of incidents, darker representing a larger amount in comparision to the lowest count, 30.
+      </p>
+
+      <h3>Discussion</h3>
+      <p>
+        There is a particular intersection, Powell and O'Farell, which accounts for rougly 15% of the data presented. This intersection in particular is a busy touristy area with shopping stores, but it is also right on the outside of one of the most dangerous neighborhoods, the Tenderloin. The combination of both large amount of tourist and the entrance of Tenderloin results in large amounts of incidents. With this knowledge, we should expect in the next graph that the largest incident is personal theft.
+      </p>
+
+      <h3>Credit</h3>
+      <p>
+        Data set: <a href="https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-2018-to-Present/wg3w-h783" target="_blank">SFPD Incidents 2018-2019</a><br />
+        Simple bar chart: <a href="https://beta.observablehq.com/@mbostock/d3-bar-chart" target="_blank">Mike Bostock</a><br />
+        Linear gradient chart: <a href="https://bl.ocks.org/EfratVil/484d0555f6f818ca6eea3de549a21e86" target="_blank">EfratVil</a>
+      </p>
+    </div>
+  </section>
+
+  <a name="vis3"></a>
+  <section class="section">
+    <div class="container content">
+      <h2>Visualization 3</h2>
+
+      <div id="vis3">
+
+      </div>
+
+      <h3>Interpretation</h3>
+      <p>
+        This graph displays the different types of incidents in the intersection with the largest amount of incidents, Powell/O'Farell.
+      </p>
+
+      <h3>Discussion</h3>
+      <p>
+        There is a clear and overwhelming incident type which is Larceny/Theft, accounting for 50% of the incidents in this intersection. This makes sense as this intersection is very touristy, which has a lot of traffic and is right in the outskirt of the Tenderloin.
+      </p>
+
+      <h3>Credit</h3>
+      <p>
+        Data set: <a href="https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-2018-to-Present/wg3w-h783" target="_blank">SFPD Incidents 2018-2019</a><br />
+        Simple pie chart: <a href="https://blockbuilder.org/mbostock/3887235" target="_blank">Mbostock</a>
       </p>
     </div>
   </section>
@@ -135,7 +239,7 @@
             </td>
 
             <td>
-              If appropriate, provide a brief justification for this level of functionality. Clearly state if this level was not implemented.
+              3 prototype graphs created
             </td>
           </tr>
 
@@ -150,14 +254,14 @@
             </td>
 
             <td>
-              If appropriate, provide a brief justification for this level of functionality. Clearly state if this level was not implemented.
+              Implemented 1 graph fully with legends, title and similar to Prototype 1.
             </td>
           </tr>
 
           <!-- b level functionality -->
           <tr>
             <td class="has-text-centered">
-              <i class="far fa-fw fa-times-circle has-text-danger"></i>
+              <i class="far fa-fw fa-check-circle has-text-success"></i>
             </td>
 
             <td class="has-text-centered">
@@ -165,7 +269,7 @@
             </td>
 
             <td>
-              If appropriate, provide a brief justification for this level of functionality. Clearly state if this level was not implemented.
+              Implemented 2 graphs fully with legends, title and similar to Prototype 1, 2.
             </td>
           </tr>
 
@@ -173,7 +277,7 @@
           <!-- a level functionality -->
           <tr>
             <td class="has-text-centered">
-              <i class="far fa-fw fa-times-circle has-text-danger"></i>
+              <i class="far fa-fw fa-check-circle has-text-success"></i>
             </td>
 
             <td class="has-text-centered">
@@ -181,14 +285,14 @@
             </td>
 
             <td>
-              If appropriate, provide a brief justification for this level of functionality. Clearly state if this level was not implemented.
+              Implemented 3 graphs fully with legends, title and similar to Prototype 1, 2, 3.
             </td>
           </tr>
         <tbody>
       </table>
 
       <p>
-        Any additional context you want to provide regarding functionality and grading can be included here. This may include any challenges or bugs you ran into that prevented you from implementing additional functionality.
+        Adding a caption was very difficult as the text elements in SVG do not auto-wrap. You need to implement a function that automatically wraps and places text accordingly.
       </p>
     </div>
   </section>
@@ -205,24 +309,22 @@
         <div class="media-left">
           <p class="image is-128x128">
             <!-- todo: replace with your profile image -->
-            <img src="https://bulma.io/images/placeholders/128x128.png">
+            <img src="profile.png">
           </p>
         </div>
 
         <div class="media-content">
             <p>
-              <!-- todo: replace with your information -->
-              <strong>Full Name</strong>
+              <strong>Samuel Escapa</strong>
               <br/>
-              This is a good place to place a brief biography describing your interests and skills, a professional profile photo, and/or links to your Github, Linkedin, and other <em>professional</em> social media accounts.
+              Passionate learner and coder, explorer of the world!
               <br/>
-              <!-- find brand icons at: https://fontawesome.com/icons?d=gallery&s=brands&m=free -->
-              <a href="https://github.com/">
+              <a href="https://github.com/saescapa">
                 <span class="fab fa-github"></span>
                 <span>Github</span>
               </a>
               &bullet;
-              <a href="https://www.linkedin.com/">
+              <a href="https://www.linkedin.com/in/samuel-escapa">
                 <span class="fab fa-linkedin"></span>
                 <span>LinkedIn</span>
               </a>
@@ -251,6 +353,12 @@
       </small>
     </div>
   </footer>
+
+  <script src="data.js"></script>
+  <script src="global.js"></script>
+  <script src="vis1.js"></script>
+  <script src="vis2.js"></script>
+  <script src="vis3.js"></script>
 
 <!-- end body and html -->
 </body>
